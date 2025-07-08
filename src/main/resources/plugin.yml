@@ -1,7 +1,7 @@
 name: BetterBOTPlaceholders
 version: 1.0
 main: com.example.betterbotplaceholders.BetterBOTPlaceholders
-api-version: 1.19
+api-version: 1.17
 authors: [JustMentalMatt]
 description: Enhanced PAPI placeholders for BungeeOnlineTime
 depend: [PlaceholderAPI]
