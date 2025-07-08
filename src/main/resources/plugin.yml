@@ -1,0 +1,7 @@
+name: PlaytimeTracker
+version: 1.0
+main: com.example.playtimetracker.PlaytimeTracker
+api-version: 1.19
+authors: [YourName]
+description: Provides PAPI placeholders for BungeeOnlineTime playtime tracking
+depend: [PlaceholderAPI]
