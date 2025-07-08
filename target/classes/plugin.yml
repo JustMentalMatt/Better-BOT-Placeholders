@@ -1,6 +1,6 @@
 name: Better-BOT-Placeholders
 version: 1.0
-main: com.example.better-bot-placeholders.Better-BOT-Placeholders
+main: com.example.betterbotplaceholders.BetterBOTPlaceholders
 api-version: 1.19
 authors: [JustMentalMatt]
 description: Provides PAPI placeholders for BungeeOnlineTime playtime tracking
