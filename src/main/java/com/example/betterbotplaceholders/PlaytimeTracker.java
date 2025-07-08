@@ -1,4 +1,4 @@
-package com.example.playtimetracker;
+package com.example.betterbotplaceholders;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,7 +32,7 @@ public class PlaytimeTracker extends JavaPlugin {
         // Schedule cache refresh every 5 minutes
         getServer().getScheduler().runTaskTimerAsynchronously(this, cache::refresh, 0, 20 * 60 * 5);
         
-        getLogger().info("PlaytimeTracker has been enabled!");
+        getLogger().info("Better-BOT-Placeholders has been enabled!");
     }
     
     @Override
@@ -42,7 +42,7 @@ public class PlaytimeTracker extends JavaPlugin {
         }
         
         databaseManager.close();
-        getLogger().info("PlaytimeTracker has been disabled!");
+        getLogger().info("Better-BOT-Placeholders has been disabled!");
     }
     
     public DatabaseManager getDatabaseManager() {

@@ -1,4 +1,4 @@
-package com.example.playtimetracker;
+package com.example.betterbotplaceholders;
 
 public class PlaytimeRecord {
     private final String name;

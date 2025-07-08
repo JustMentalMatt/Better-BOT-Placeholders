@@ -1,4 +1,4 @@
-package com.example.playtimetracker;
+package com.example.betterbotplaceholders;
 
 import java.util.ArrayList;
 import java.util.List;

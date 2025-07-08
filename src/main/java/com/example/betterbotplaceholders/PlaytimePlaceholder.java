@@ -1,4 +1,4 @@
-package com.example.playtimetracker;
+package com.example.betterbotplaceholders;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;

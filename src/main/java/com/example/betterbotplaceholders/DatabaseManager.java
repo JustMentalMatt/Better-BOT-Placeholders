@@ -1,4 +1,4 @@
-package com.example.playtimetracker;
+package com.example.betterbotplaceholders;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class DatabaseManager {
         this.database = database;
         this.username = username;
         this.password = password;
-        this.logger = Logger.getLogger("PlaytimeTracker");
+        this.logger = Logger.getLogger("Better-BOT-Placeholders");
         connect();
     }
     
