@@ -17,7 +17,7 @@ public class DatabaseManager {
         this.database = database;
         this.username = username;
         this.password = password;
-        this.logger = Logger.getLogger("Better-BOT-Placeholders");
+        this.logger = Logger.getLogger("BetterBOTPlaceholders");
         connect();
     }
     
@@ -54,6 +54,23 @@ public class DatabaseManager {
         return records;
     }
     
+    public long getPlayerPlaytime(String playerName) {
+        String query = "SELECT time FROM BungeeOnlineTime WHERE name = ?";
+        
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setString(1, playerName);
+            ResultSet rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                return rs.getLong("time");
+            }
+        } catch (SQLException e) {
+            logger.log(Level.WARNING, "Failed to fetch player playtime: " + e.getMessage());
+        }
+        
+        return 0;
+    }
+    
     public void close() {
         try {
             if (connection != null && !connection.isClosed()) {
@@ -70,5 +87,9 @@ public class DatabaseManager {
         } catch (SQLException e) {
             return false;
         }
+    }
+    
+    public Connection getConnection() {
+        return connection;
     }
 }

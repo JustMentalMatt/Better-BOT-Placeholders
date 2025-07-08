@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlaytimeCache {
+    private final BetterBOTPlaceholders plugin;
     private final DatabaseManager databaseManager;
     private List<PlaytimeRecord> topPlaytimes;
-    private final int cacheSize = 10; // Top 10 players
+    private final int cacheSize = 10;
     
-    public PlaytimeCache(DatabaseManager databaseManager) {
+    public PlaytimeCache(BetterBOTPlaceholders plugin, DatabaseManager databaseManager) {
+        this.plugin = plugin;
         this.databaseManager = databaseManager;
         this.topPlaytimes = new ArrayList<>();
         refresh();
@@ -19,18 +21,17 @@ public class PlaytimeCache {
     }
     
     public String getTopName(int position) {
-        if (position < 1 || position > topPlaytimes.size()) {
-            return "N/A";
-        }
+        if (position < 1 || position > topPlaytimes.size()) return "N/A";
         return topPlaytimes.get(position - 1).getName();
     }
     
-    public String getTopTime(int position) {
-        if (position < 1 || position > topPlaytimes.size()) {
-            return "0";
-        }
-        long hours = topPlaytimes.get(position - 1).getTime() / (1000 * 60 * 60);
-        return String.valueOf(hours);
+    public long getTopMillis(int position) {
+        if (position < 1 || position > topPlaytimes.size()) return 0;
+        return topPlaytimes.get(position - 1).getTime();
+    }
+    
+    public long getPlayerMillis(String playerName) {
+        return databaseManager.getPlayerPlaytime(playerName);
     }
     
     public int getCacheSize() {

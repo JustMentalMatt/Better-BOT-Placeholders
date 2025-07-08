@@ -2,16 +2,15 @@ package com.example.betterbotplaceholders;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class PlaytimeTracker extends JavaPlugin {
+public class BetterBOTPlaceholders extends JavaPlugin {
     private DatabaseManager databaseManager;
-    private PlaytimePlaceholder placeholderExpansion;
+    private BOTPlaceholderExpansion placeholderExpansion;
     private PlaytimeCache cache;
     
     @Override
     public void onEnable() {
         saveDefaultConfig();
         
-        // Initialize database connection
         databaseManager = new DatabaseManager(
             getConfig().getString("database.host"),
             getConfig().getString("database.port"),
@@ -20,19 +19,15 @@ public class PlaytimeTracker extends JavaPlugin {
             getConfig().getString("database.password")
         );
         
-        // Initialize cache
-        cache = new PlaytimeCache(databaseManager);
+        cache = new PlaytimeCache(this, databaseManager);
         
-        // Register placeholder expansion if PlaceholderAPI is present
         if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
-            placeholderExpansion = new PlaytimePlaceholder(this, cache);
+            placeholderExpansion = new BOTPlaceholderExpansion(this, cache);
             placeholderExpansion.register();
         }
         
-        // Schedule cache refresh every 5 minutes
         getServer().getScheduler().runTaskTimerAsynchronously(this, cache::refresh, 0, 20 * 60 * 5);
-        
-        getLogger().info("Better-BOT-Placeholders has been enabled!");
+        getLogger().info("BetterBOTPlaceholders has been enabled!");
     }
     
     @Override
@@ -40,9 +35,8 @@ public class PlaytimeTracker extends JavaPlugin {
         if (placeholderExpansion != null) {
             placeholderExpansion.unregister();
         }
-        
         databaseManager.close();
-        getLogger().info("Better-BOT-Placeholders has been disabled!");
+        getLogger().info("BetterBOTPlaceholders has been disabled!");
     }
     
     public DatabaseManager getDatabaseManager() {

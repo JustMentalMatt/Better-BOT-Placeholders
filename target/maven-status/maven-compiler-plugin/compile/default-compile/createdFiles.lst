@@ -1,5 +1,5 @@
-com\example\playtimetracker\PlaytimePlaceholder.class
-com\example\playtimetracker\PlaytimeTracker.class
-com\example\playtimetracker\DatabaseManager.class
-com\example\playtimetracker\PlaytimeCache.class
-com\example\playtimetracker\PlaytimeRecord.class
+com\example\betterbotplaceholders\BOTPlaceholderExpansion.class
+com\example\betterbotplaceholders\PlaytimeCache.class
+com\example\betterbotplaceholders\PlaytimeRecord.class
+com\example\betterbotplaceholders\BetterBOTPlaceholders.class
+com\example\betterbotplaceholders\DatabaseManager.class
