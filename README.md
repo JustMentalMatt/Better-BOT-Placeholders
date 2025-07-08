@@ -1,4 +1,4 @@
-## Better Bungee Online Time Placeholders
+## Better BungeeOnlineTime Placeholders
 ### This plugin uses BungeeOnlineTimes database and lets you have more flexible placeholders for leaderboards.
 
 Requires: https://github.com/R3fleXi0n/BungeeOnlineTime
